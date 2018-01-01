@@ -69,13 +69,11 @@ public final class BookCollectionControllerTest {
 
     @Test
     public void postBooksShouldErrorBadRequestOnEmptyObject() throws Exception {
-        // @todo Finish this after the @todo on the Book class is fixed.
-        return;
-//        mvc.perform(MockMvcRequestBuilders.post("/books")
-//                .contentType("application/json")
-//                .content("{}")
-//                .accept("text/plain"))
-//            .andExpect(status().isBadRequest());
+        mvc.perform(MockMvcRequestBuilders.post("/books")
+                .contentType("application/json")
+                .content("{}")
+                .accept("application/json"))
+            .andExpect(status().isBadRequest());
     }
 
     @Test
