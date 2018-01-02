@@ -17,4 +17,4 @@ Run the application with `./bin/run`. Visit
 Run `./bin/build`.
 
 ### Testing the code
-Run `./bin/test`..
+Run `./bin/test`.
