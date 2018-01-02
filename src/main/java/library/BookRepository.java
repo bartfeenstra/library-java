@@ -2,6 +2,7 @@ package library;
 
 import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +20,10 @@ final class BookRepository {
     /**
      * Adds a book.
      */
-    public void addBook(Book book) {
+    public void addBook(@NotNull Book book) {
+        if (null == book) {
+            throw new NullPointerException();
+        }
         books.add(book);
     }
 

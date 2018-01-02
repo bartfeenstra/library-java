@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @RestController
@@ -27,7 +28,8 @@ final class BookCollectionController {
      */
     @PostMapping(consumes = "application/json", produces = "application/json")
     public @ResponseBody
-    Book addBook(@RequestBody @Valid Book book) {
+    @NotNull
+    Book addBook(@RequestBody @Valid @NotNull Book book) {
         books.addBook(book);
         return book;
     }
