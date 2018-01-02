@@ -3,8 +3,11 @@ language: java
 jdk:
   - openjdk8
 
+build:
+  - ./bin/build
+
 script:
-  - gradle test
+  - ./bin/test
 
 after_success:
   - gradle jacocoTestReport coveralls
