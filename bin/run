@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+(
+    cd `dirname "$0"`/..
+    gradle build -x test && java -jar build/libs/library-0.1.0.jar
+)
+
